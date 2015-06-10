@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="weather">
+    <head>
+        <meta charset="utf8">
+        <title>Weather-Ng</title>
+    </head>
+    
+    <body>
+        <h1>Weather</h1>
+        
+        <div id="main" ng-controller="WeatherCtrl">
+            <div id="form">
+                <label for="city">Cidade,País</label>
+                <input ng-model="city" type="text" id="city">
+                <br>
+                <label for="unit">Unidade</label>
+                <select ng-model="unit" name="unit" id="unit">
+                    <option value="metric">Métrico</option>
+                    <option value="imperial">Imperial</option>
+                </select>
+                <br>
+                <button ng-click="getWeather()">Consultar</button>
+            </div>
+
+            <div id="teste">
+                <img ng-src="{{model.iconUrl}}">
+                <p>{{model.description}}</p>
+                <p>{{model.temp}}</p>
+            </div>
+        </div>
+        
+        <!-- 3rd party vendor -->
+        <script src="bower_components/angularjs/angular.js"></script>
+        
+        <!-- application scripts -->
+        <script src="app/app.js"></script>
+        <script src="app/app.config.js"></script>
+        <script src="app/weather.model.js"></script>
+        <script src="app/weather.service.js"></script>
+        <script src="app/weather.controller.js"></script>
+    </body>
+
+</html>

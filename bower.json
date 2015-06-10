@@ -1,0 +1,23 @@
+{
+  "name": "weather-ng",
+  "version": "0.0.1",
+  "description": "a simple weather app in angularjs",
+  "main": "app.js",
+  "keywords": [
+    "angularjs",
+    "javascript",
+    "weather",
+    "webapp"
+  ],
+  "authors": [
+    "@jnthas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
