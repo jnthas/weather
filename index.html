@@ -12,14 +12,7 @@
             <div id="form">
                 <label for="city">Cidade,País</label>
                 <input ng-model="city" type="text" id="city">
-                <br>
-                <label for="unit">Unidade</label>
-                <select ng-model="unit" name="unit" id="unit">
-                    <option value="metric">Métrico</option>
-                    <option value="imperial">Imperial</option>
-                </select>
-                <br>
-                <button ng-click="getWeather()">Consultar</button>
+                <button ng-click="getWeather(city)">Consultar</button>
             </div>
 
             <div id="teste">

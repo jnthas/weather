@@ -11,13 +11,15 @@
                     speed: 'Metros/seg.',
                     temp: 'Celsius',
                     humidity: '%',
-                    pressure: 'hPa'
+                    pressure: 'hPa',
+                    unit: 'metric'
                 },
                 'en': {
                     speed: 'Miles/h',
                     temp: 'Fahrenheit',
                     humidity: '%',
-                    pressure: 'hPa'
+                    pressure: 'hPa',
+                    unit: 'imperial'                    
                 }
             }
         });

@@ -14,7 +14,6 @@ function Weather(json, config) {
     this.wind_speed = json.wind.speed + ' ' + config.formatUnits[config.lang].speed;
 };
 //Weather.prototype.capitalizeEachWord = capitalizeEachWord;
-    
 
 function capitalizeEachWord(str) {
     return str.replace(/\w\S*/g, function(txt) {
