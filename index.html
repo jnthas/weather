@@ -3,22 +3,16 @@
     <head>
         <meta charset="utf8">
         <title>Weather-Ng</title>
+        <link href="content/css/style.css" rel="stylesheet">
     </head>
     
-    <body>
-        <h1>Weather</h1>
-        
-        <div id="main" ng-controller="WeatherCtrl">
-            <div id="form">
-                <label for="city">Cidade,País</label>
-                <input ng-model="city" type="text" id="city">
-                <button ng-click="getWeather(city)">Consultar</button>
-            </div>
-
-            <div id="teste">
-                <img ng-src="{{model.iconUrl}}">
-                <p>{{model.description}}</p>
-                <p>{{model.temp}}</p>
+    <body ng-controller="WeatherCtrl">
+        <div id="wrapper" css-background-image="./content/images/{{iconId}}.jpg">
+            <div id="input-city">
+                <div id="form">
+                    <input ng-model="city" type="text" id="city" placeholder="Cidade, País">
+                    <button ng-click="getWeather(city);">Consultar</button>
+                </div>
             </div>
         </div>
         
@@ -28,6 +22,7 @@
         <!-- application scripts -->
         <script src="app/app.js"></script>
         <script src="app/app.config.js"></script>
+        <script src="app/app.directives.js"></script>
         <script src="app/weather.model.js"></script>
         <script src="app/weather.service.js"></script>
         <script src="app/weather.controller.js"></script>

@@ -5,6 +5,7 @@ function Weather(json, config) {
     this.lon = json.coord.lon + '°';
     this.lat = json.coord.lat + '°';    
     this.description = capitalizeEachWord(json.weather[0].description);
+    this.iconId = json.weather[0].icon;
     this.iconUrl = config.iconUrl.replace('{iconId}', json.weather[0].icon);
     this.temp = json.main.temp + '° ' + config.formatUnits[config.lang].temp;
     this.temp_min = json.main.temp_min + '° ' + config.formatUnits[config.lang].temp;

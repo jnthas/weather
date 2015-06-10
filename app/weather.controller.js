@@ -4,8 +4,9 @@
     angular.module('weather').controller('WeatherCtrl', WeatherCtrl); 
 
     function WeatherCtrl($scope, WeatherService, WeatherConfig) {
-        $scope.city = "Juiz de Fora, BR";
+        $scope.city = "";
         $scope.getWeather = getWeather;
+        $scope.iconId = "03d";
                             
         function getWeather(city) {            
             var promise = WeatherService.getWeather(city);
