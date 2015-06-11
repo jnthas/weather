@@ -7,9 +7,9 @@ function Weather(json, config) {
     this.description = capitalizeEachWord(json.weather[0].description);
     this.iconId = json.weather[0].icon;
     this.iconUrl = config.iconUrl.replace('{iconId}', json.weather[0].icon);
-    this.temp = json.main.temp + '° ' + config.formatUnits[config.lang].temp;
-    this.temp_min = json.main.temp_min + '° ' + config.formatUnits[config.lang].temp;
-    this.temp_max = json.main.temp_max + '° ' + config.formatUnits[config.lang].temp;
+    this.temp = Math.round(json.main.temp) + '°' + config.formatUnits[config.lang].temp;
+    this.temp_min = json.main.temp_min + '°' + config.formatUnits[config.lang].temp;
+    this.temp_max = json.main.temp_max + '°' + config.formatUnits[config.lang].temp;
     this.pressure = json.main.pressure + ' ' + config.formatUnits[config.lang].pressure;
     this.humidity = json.main.humidity + config.formatUnits[config.lang].humidity;
     this.wind_speed = json.wind.speed + ' ' + config.formatUnits[config.lang].speed;

@@ -5,19 +5,34 @@
 
     function WeatherCtrl($scope, WeatherService, WeatherConfig) {
         $scope.city = "";
-        $scope.getWeather = getWeather;
-        $scope.iconId = "03d";
-                            
-        function getWeather(city) {            
-            var promise = WeatherService.getWeather(city);
+        $scope.getWeatherByCity = getWeatherByCity;
+        $scope.getWeatherByLocation = getWeatherByLocation;
+        $scope.model = null;
+        
+        function getWeatherByCity(city) {
             $scope.model = null;
-            promise.then(function(w){
+            var promise = WeatherService.getWeatherByCity(city);
+            updateModel(promise);
+        };
+        
+        function getWeatherByLocation() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                $scope.model = null;
+                var promise = WeatherService.
+                    getWeatherByLocation(position.coords.latitude, position.coords.longitude);
+                updateModel(promise);
+            });
+        };
+        
+        function updateModel(promise) {
+            promise.then(function(w) {
                 $scope.model = w;
-            }).catch(function(e){
+            }).catch(function(e) {
                 $scope.errorMessage = e;
-            });            
-        }
+            });
+        };
+        
+        getWeatherByLocation();
     }
-    
 })();
 

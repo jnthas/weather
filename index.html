@@ -2,16 +2,19 @@
 <html ng-app="weather">
     <head>
         <meta charset="utf8">
-        <title>Weather-Ng</title>
+        <title>Tempo | Hoje</title>
         <link href="content/css/style.css" rel="stylesheet">
     </head>
     
     <body ng-controller="WeatherCtrl">
-        <div id="wrapper" css-background-image="./content/images/{{iconId}}.jpg">
-            <div id="input-city">
+        <div id="wrapper" background-image="content/images/{{model.iconId}}.jpg">
+            
+            <div id="input-city">                
                 <div id="form">
+                    <div>{{model.city}}</div>
+                    <div>{{model.description}}, {{model.temp}}</div>
                     <input ng-model="city" type="text" id="city" placeholder="Cidade, País">
-                    <button ng-click="getWeather(city);">Consultar</button>
+                    <button ng-click="getWeatherByCity(city);">Consultar</button>
                 </div>
             </div>
         </div>
@@ -27,5 +30,4 @@
         <script src="app/weather.service.js"></script>
         <script src="app/weather.controller.js"></script>
     </body>
-
 </html>
